@@ -1,5 +1,18 @@
-a, b, c, d = map(int, input().split())
+length = int(input())
 
-arr = sorted([a, b, c, d])
+pairs = [int(input()) for i in range(length)]
 
-print(arr[0] * arr[1] + arr[2] * arr[3])
+maxSum = -1
+
+for i in range(length):
+  for j in range(i, length):
+    if pairs[i] > pairs[j]:
+      pairSum = pairs[i] + pairs[j]
+      if pairSum % 120 == 0:
+        if pairSum > maxSum:
+          firstOfPair = pairs[i]
+          secondOfPair = pairs[j]
+          maxSum = pairSum
+
+
+print(firstOfPair, secondOfPair)
