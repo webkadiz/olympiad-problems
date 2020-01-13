@@ -1,8 +1,13 @@
+n = int(input())
 
-sum = 0
+s = {str(i) for i in range(1, n + 1)}
 
-for i in range(2, 1100000):
-	print(1 / i ** 2)
-	sum += 1 / i ** 2
+def comb(rest = s, res = ''):
 
-print(sum)
+	if not rest:
+		print(res)
+
+	for el in sorted(rest):
+		comb(rest - { el }, res + el)
+
+comb()
