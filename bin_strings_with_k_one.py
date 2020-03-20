@@ -1,5 +1,6 @@
 n, k = map(int, input().split())
 
+
 def bin_str(n, am = 0, res = ''):
 	global k
 
@@ -12,6 +13,7 @@ def bin_str(n, am = 0, res = ''):
 	else:
 		bin_str(n - 1, am, res + '0')
 		bin_str(n - 1, am + 1, res + '1')
+
 
 bin_str(n)
 

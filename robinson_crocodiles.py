@@ -65,6 +65,6 @@ for i in range(n):
 	for z in range(m):
 		find_path(i, z, island[i][z])
 
-# [print(*row, sep="") for row in island]
+[print(*row, sep="") for row in island]
 
 print(k)

@@ -1,6 +1,9 @@
 from math import gcd
 
 a, b, c = map(int, input().split())
+ 
+
+
 
 nod = gcd(a, b)
 cut_k = (a // nod + b // nod - 1) * nod

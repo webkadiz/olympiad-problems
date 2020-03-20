@@ -1,3 +1,5 @@
+
+
 n = int(input())
 mem = [[0, 0] for i in range(80)]
 m1 = m2 = 0
