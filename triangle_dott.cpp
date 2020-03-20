@@ -12,28 +12,29 @@ int pos(Point p1, Point p2, Point p3) {
 
 	int dx1 = p1.x - p2.x;
 	int dy1 = p1.y - p2.y;
-	int dx2 = p1.x - p3.x;
-	int dy2 = p1.y - p3.y;
+	int dx2 = p3.x - p2.x;
+	int dy2 = p3.x - p2.x;
 
 	if (dx1 == 0) {
-		if (p3.x > p2.x) { return 1; }
-		else if (p3.x == p2.x) { return 0; }
-		else if (p3.x < p2.x) { return -1; }
+		if (p3.x > p1.x) { return 1; }
+		else if (p3.x == p1.x) { return 0; }
+		else if (p3.x < p1.x) { return -1; }
 	}
 
 	if (dx2 == 0) {
-		if (p3.y > p2.y) { return 1; }
-		else if (p3.y == p2.y) {return 0; }
-		else if (p3.y < p2.y) { return -1; }
+		if (p3.y > p1.y) { return 1; }
+		else if (p3.y == p1.y) {return 0; }
+		else if (p3.y < p1.y) { return -1; }
 	}
 
 	float k1 = dy1 / dx1;
-	float k2 = dy2 / dx2;
+	float k2 = dy2 / dy2;
 	
+	cout << k1 << ' ' << k2 << endl;
 	
-	if (k2 > k1) { return 1; }
-	else if (k2 == k1) { return 0; }
-	else if (k2 < k1) { return -1; }
+	if (k1 * k2 < 0) { return -1; }
+	else { return 1; }
+
 
 }
 
@@ -53,7 +54,7 @@ int main() {
 
 	cout << check1 << check2 << check3;
 
-	if (check3 == 2 || check1 == 2 || check1 == 2) {
+	if (check3 == 2 || check2 == 2 || check1 == 2) {
 		cout << "Out";
 	} else {
 		cout << "In";
