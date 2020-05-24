@@ -71,10 +71,12 @@ while True:
 	if parent2:
 		parent2_height = vertex_data[parent2][0]
 	
-	if parent1_height < parent2_height and parent1_height > -1:
+	if parent1_height > -1:
 		parent = parent1
-	elif parent2_height > -1:
+	if parent2_height > -1:
 		parent = parent2
+		if parent1_height > -1 and parent1_height < parent2_height:
+			parent = parent1
 
 
 	if parent:
